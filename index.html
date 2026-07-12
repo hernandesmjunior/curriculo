@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hernandes Matias Junior — Engenharia de Dados</title>
+<title>Hernandes Matias Junior — Dados e Analytics</title>
 <meta name="description" content="Currículo de Hernandes Matias Junior — Tech Lead e Engenheiro de Dados Sênior no Itaú Unibanco.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,10 +72,10 @@
   .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:64px 0 88px}
   .eyebrow{
     font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--lime-deep);margin-bottom:20px;
+    text-transform:uppercase;color:#3c00ff;margin-bottom:20px;
     display:inline-flex;align-items:center;gap:8px;
   }
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--lime-deep)}
+  .eyebrow::before{content:"";width:26px;height:1px;background:#3c00ff}
   h1{
     font-family:'Space Grotesk',sans-serif;font-weight:700;
     font-size:clamp(38px,5.2vw,60px);line-height:1.04;letter-spacing:-.03em;
@@ -121,7 +121,7 @@
   .card:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(18,18,27,.05),0 22px 44px -22px rgba(252,98,0,.35)}
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 
-  .edu-tier{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--lime-deep);margin-bottom:18px}
+  .edu-tier{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#3c00ff;margin-bottom:18px}
   .edu-item{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line)}
   .edu-item:last-child{border-bottom:0;padding-bottom:0}
   .edu-item strong{font-weight:600;font-size:15px;display:block}
@@ -181,6 +181,11 @@
     font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);
     letter-spacing:.08em;text-transform:uppercase;
   }
+  /* variante 3 — laranja */
+  .proj.v-laranja{background:#f66001;color:#ffffff}
+  .proj.v-laranja .proj-media{background:#ffffff}
+  .proj.v-laranja .proj-desc{color:#ffffff}
+  .proj.v-laranja .proj-tag{border-color:rgb(255, 255, 255);color:#ffffff}
 
   .skill-block{margin-bottom:22px}
   .skill-block:last-child{margin-bottom:0}
@@ -231,6 +236,14 @@
     *{animation:none !important;transition:none !important}
     .nav-inner a.cta{background:var(--lime);color:var(--ink)}
   }
+
+  .card.hl{background:#f66001;border-color:#f66001;color:#fff}
+  .card.hl .job-co{color:#fff}
+  .card.hl .job-period,
+  .card.hl .job-note{color:rgba(255,255,255,.75)}
+  .card.hl li{color:#fff}
+  .card.hl li::before{background:rgba(255,255,255,.25);border-color:#fff}
+
 </style>
 </head>
 <body>
@@ -256,11 +269,14 @@
       <h1>Hernandes<br>Matias Junior</h1>
       <p class="lede">Tech Lead e Engenheiro de Dados Sênior no Itaú Unibanco. Sempre tive medo de ficar sem trabalho e isso fez com que eu me qualificasse para poder fazer um monte de coisas.</p>
       <div class="tags">
-        <span class="tag on">Engenharia de dados</span>
-        <span class="tag on">Ciência de dados</span>
+        <span class="tag on">(31) 9 9301-4381</span>
+        <span class="tag on">hernandesmjunior@gmail.com</span>
+        <span class="tag on">linkedin.com/in/hernandesmjunior</span>
+        <span class="tag">Engenharia de Dados</span>
+        <span class="tag">Ciência de Dados</span>
         <span class="tag">Machine Learning</span>
         <span class="tag">Estatística</span>
-        <span class="tag">AWS</span>
+        <span class="tag">Cloud</span>
         <span class="tag">IA</span>
       </div>
     </div>
@@ -325,11 +341,11 @@
         </div>
         <div class="job-note">Cargo inicial: Engenheiro de Dados Pleno</div>
         <ul>
-          <li>Liderança técnica no desenvolvimento de soluções de dados para produtos de pagamentos (Pix, boletos, TED, débito e TEF), com processamento em larga escala e alta criticidade.</li>
-          <li>Estruturação de dados transacionais (milhões de eventos/dia) e atuação end-to-end no ciclo de dados em ambiente cloud AWS.</li>
-          <li>Colaboração com cientistas de dados na preparação de datasets e viabilização de modelos analíticos.</li>
-          <li>Definição de padrões de arquitetura, qualidade e governança de dados.</li>
-          <li>Automação de acesso e exploração de dados com IA (agentes e engenharia de prompts), apoiando análises e tomada de decisão.</li>
+            Atendendo a Comunidade de Pagamentos e seus principais produtos, como PIX, TED, TEF e Boletos.
+            <p><b>Principais entregas:</b></p>
+          <li>Pipeline que mede o impacto do cadastro no DDA sobre o engajamento do cliente, comparando janelas de 3 meses antes e depois. Consumido por Cientistas de Dados e Engenheiros de Analytics;</li>
+          <li>Tabela SPEC que identifica clientes com propensão ao uso do Hub de Pagamentos, integrando 12 origens de dados (transacionais e de navegação). Produto consumido pelo negócio para direcionar ações de engajamento;</li>
+          <li>Pipeline que consolida boletos emitidos para clientes Itaú Unibanco e mede onde são pagos (no banco ou na concorrência) mapeando a perda de participação nas transações.</li>
         </ul>
         <div class="awards">
           <span class="award">2× prêmio de performance · 2024, 2026</span>
@@ -338,12 +354,14 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card hl">
         <div class="job-head">
           <div class="job-role">Cientista de Dados Pleno <span class="job-co">— Localiza</span></div>
           <div class="job-period">out/2021 — jun/2022</div>
         </div>
         <ul>
+            Atuação na área de CRM da empresa, atendendo principalmente o cliente pessoa física.
+            <p><b>Principais entregas:</b></p>
           <li>Segmentação de clientes com machine learning não supervisionado e modelagem RFV aplicada à base de CRM.</li>
           <li>Desenvolvimento de modelos preditivos de propensão e previsão de churn.</li>
           <li>Preparação de dados para modelagem, incluindo seleção de variáveis e engenharia de features.</li>
@@ -357,7 +375,7 @@
           <div class="job-role">Engenheiro de Analytics Pleno <span class="job-co">— Construtora Barbosa Mello</span></div>
           <div class="job-period">out/2020 — out/2021</div>
         </div>
-        <div class="job-note">Cargo inicial: Engenheiro de Dados Júnior</div>
+        <div class="job-note">Cargo inicial: Engenheiro de Analytics Júnior</div>
         <ul>
           <li>Soluções de dados para suporte à decisão em controladoria, suprimentos, compliance e gestão de equipamentos.</li>
           <li>Modelagem e estruturação de dados em data warehouse para definição e acompanhamento de indicadores operacionais e financeiros.</li>
@@ -365,6 +383,9 @@
           <li>Automação de rotinas analíticas e processos de dados com Python.</li>
           <li>Desenvolvimento de aplicações corporativas com Power Apps e interação direta com áreas de negócio para levantamento e tradução de requisitos.</li>
         </ul>
+        <div class="awards">
+          <span class="award">1× promoção interna em menos de um ano de empresa · 2021</span>
+        </div>
       </div>
 
     </div>
@@ -399,6 +420,24 @@
       </a>
 
       <!-- PROJETO 2 -->
+    <a class="proj v-laranja" href="#">
+        <div class="proj-media">
+          <img src="imagens/risco_de_credito.png" alt="Projeto de risco de crédito">
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Risco de crédito</h3>
+          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Scorecard</span>
+            <span class="proj-tag">WOE / IV</span>
+            <span class="proj-tag">Python</span>
+          </div>
+        </div>
+      </a>
+
+
+      <!-- PROJETO 3 — espaço reservado -->
+
       <a class="proj v-dark" href="#">
         <div class="proj-media">
           <img src="imagens/clusterizacao_de_clientes.png" alt="Segmentação de clientes">
@@ -413,22 +452,7 @@
           </div>
         </div>
       </a>
-
-      <!-- PROJETO 3 — espaço reservado -->
-      <a class="proj v-light" href="#">
-        <div class="proj-media">
-          <img src="imagens/risco_de_credito.jpg" alt="Projeto de risco de crédito">
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">Risco de crédito</h3>
-          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
-          <div class="proj-tags">
-            <span class="proj-tag">Scorecard</span>
-            <span class="proj-tag">WOE / IV</span>
-            <span class="proj-tag">Python</span>
-          </div>
-        </div>
-      </a>
+      
 
       <!-- PROJETO 3 — espaço reservado -->
       <a class="proj v-light" href="#">
@@ -436,7 +460,7 @@
           <div class="proj-slot">Imagem em breve</div>
         </div>
         <div class="proj-body">
-          <h3 class="proj-title">Próximo projeto</h3>
+          <h3 class="proj-title">[Em breve] Análise de sobrevivência</h3>
           <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
           <div class="proj-tags">
             <span class="proj-tag">Tag</span>
@@ -452,7 +476,7 @@
           <div class="proj-slot">Imagem em breve</div>
         </div>
         <div class="proj-body">
-          <h3 class="proj-title">Próximo projeto</h3>
+          <h3 class="proj-title">[Em breve] Ingestão e modelagem de dados</h3>
           <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
           <div class="proj-tags">
             <span class="proj-tag">Tag</span>
@@ -468,7 +492,7 @@
           <div class="proj-slot">Imagem em breve</div>
         </div>
         <div class="proj-body">
-          <h3 class="proj-title">Próximo projeto</h3>
+          <h3 class="proj-title">[Em breve] Agente de consulta a dados</h3>
           <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
           <div class="proj-tags">
             <span class="proj-tag">Tag</span>
