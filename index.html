@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hernandes Matias Junior — Engenharia de Dados</title>
+<meta name="description" content="Currículo de Hernandes Matias Junior — Tech Lead e Engenheiro de Dados Sênior no Itaú Unibanco.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#FFFFFF;
+    --paper:#FFFFFF;
+    --ink:#12121B;
+    --ink-soft:#5A5A6E;
+    --line:#E3E3EC;
+    --lime:#3BEA2E;        /* verde limão — fundos e destaques */
+    --lime-deep:#1B8F12;   /* verde escuro — textos sobre branco */
+    --lime-soft:#E6FBE3;   /* verde claro — chips */
+    --amber:#FFB245;
+    --radius:20px;
+    --shadow:0 1px 2px rgba(18,18,27,.04), 0 12px 32px -18px rgba(18,18,27,.22);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--canvas);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* ---------- NAV ---------- */
+  .nav{position:sticky;top:0;z-index:50;padding:16px 24px;display:flex;justify-content:center}
+  .nav-inner{
+    display:flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border:1px solid var(--line);
+    border-radius:999px;padding:6px;
+    box-shadow:var(--shadow);
+    max-width:100%;overflow-x:auto;scrollbar-width:none;
+  }
+  .nav-inner::-webkit-scrollbar{display:none}
+  .nav-inner a{
+    font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:14px;
+    color:var(--ink-soft);text-decoration:none;white-space:nowrap;
+    padding:9px 16px;border-radius:999px;transition:.2s;
+  }
+  .nav-inner a:hover{color:var(--ink);background:#F2F2F6}
+  .nav-inner a.active{background:var(--ink);color:#fff}
+  .nav-inner a:focus-visible{outline:2px solid var(--lime-deep);outline-offset:2px}
+
+  /* item piscante: preto <-> verde limão */
+  @keyframes blink-cta{
+    0%,49%   {background:var(--ink);color:#fff}
+    50%,100% {background:var(--lime);color:var(--ink)}
+  }
+  .nav-inner a.cta{
+    background:var(--lime);color:var(--ink);font-weight:600;
+    animation:blink-cta 1.1s steps(1,end) infinite;
+  }
+  .nav-inner a.cta:hover{background:var(--ink);color:#fff;animation:none}
+  .nav-inner a.cta.active{background:var(--ink);color:#fff;animation:none}
+
+  /* ---------- HERO ---------- */
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:64px 0 88px}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--lime-deep);margin-bottom:20px;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--lime-deep)}
+  h1{
+    font-family:'Space Grotesk',sans-serif;font-weight:700;
+    font-size:clamp(38px,5.2vw,60px);line-height:1.04;letter-spacing:-.03em;
+  }
+  .lede{margin-top:22px;font-size:17px;color:var(--ink-soft);max-width:46ch}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .tag{
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    background:var(--paper);border:1px solid var(--line);border-radius:999px;
+    padding:7px 13px;color:var(--ink-soft);
+  }
+  .tag.on{background:var(--lime-soft);border-color:transparent;color:var(--lime-deep)}
+
+  /* ---------- FOTO ---------- */
+  .hero-art{position:relative;display:flex;justify-content:center}
+  .hero-art::before{
+    content:"";position:absolute;inset:0;margin:auto;
+    width:min(300px,90%);aspect-ratio:1;border-radius:50%;
+    background:var(--lime);
+    transform:translate(16px,16px);
+  }
+  .photo{
+    position:relative;
+    width:min(300px,90%);aspect-ratio:1;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid var(--ink);
+    box-shadow:var(--shadow);
+    display:block;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{scroll-margin-top:96px;padding:26px 0 64px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:32px;border-top:1px solid var(--line);padding-top:26px}
+  .sec-head h2{font-family:'Space Grotesk',sans-serif;font-size:30px;letter-spacing:-.02em;font-weight:600}
+  .sec-head span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);margin-left:auto}
+
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;box-shadow:var(--shadow);transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(18,18,27,.05),0 22px 44px -22px rgba(59,234,46,.55)}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+  .edu-tier{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--lime-deep);margin-bottom:18px}
+  .edu-item{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line)}
+  .edu-item:last-child{border-bottom:0;padding-bottom:0}
+  .edu-item strong{font-weight:600;font-size:15px;display:block}
+  .edu-item small{color:var(--ink-soft);font-size:13px}
+  .edu-item .yr{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);white-space:nowrap}
+
+  /* ---------- EXPERIÊNCIA (cards alinhados, sem timeline) ---------- */
+  .jobs{display:grid;gap:18px}
+  .job-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+  .job-role{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;letter-spacing:-.01em}
+  .job-co{color:var(--lime-deep);font-weight:600}
+  .job-period{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft)}
+  .job-note{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);margin-top:6px}
+  .card ul{list-style:none;margin-top:16px;display:grid;gap:9px}
+  .card li{position:relative;padding-left:20px;font-size:15px;color:#33333F}
+  .card li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:var(--lime-soft);border:1px solid var(--lime-deep)}
+  .awards{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+  .award{font-family:'JetBrains Mono',monospace;font-size:12px;background:#FFF6E8;border:1px solid #FFE0B2;color:#8A5A12;padding:6px 12px;border-radius:999px}
+
+  /* ---------- PROJETOS ---------- */
+  .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .proj{
+    border-radius:24px;overflow:hidden;display:flex;flex-direction:column;
+    text-decoration:none;color:inherit;
+    transition:transform .25s ease, box-shadow .25s ease;
+    box-shadow:var(--shadow);
+  }
+  .proj:hover{transform:translateY(-4px);box-shadow:0 1px 2px rgba(18,18,27,.05),0 26px 48px -22px rgba(18,18,27,.35)}
+  .proj-media{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .proj-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .proj-body{padding:26px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .proj-title{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+  .proj-desc{font-size:15px;line-height:1.5}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:14px}
+  .proj-tag{font-family:'JetBrains Mono',monospace;font-size:11px;border-radius:999px;padding:5px 10px;border:1px solid;}
+
+  /* variante 1 — verde limão */
+  .proj.v-lime{background:#3c00ff;color:#ffffff}
+  .proj.v-lime .proj-media{background:#ffffff}
+  .proj.v-lime .proj-desc{color:#ffffff}
+  .proj.v-lime .proj-tag{border-color:rgb(255, 255, 255);color:#ffffff}
+
+  /* variante 2 — preto */
+  .proj.v-dark{background:#ebe9ea;color:#000000}
+  .proj.v-dark .proj-media{background:#ebe9ea}
+  .proj.v-dark .proj-desc{color:#000000}
+  .proj.v-dark .proj-tag{border-color:#3000000;color:#000000}
+
+  /* variante 3 — branco / vaga futura */
+  .proj.v-light{background:var(--paper);border:1px solid var(--line)}
+  .proj.v-light .proj-media{background:#F7F7FA}
+  .proj.v-light .proj-desc{color:var(--ink-soft)}
+  .proj.v-light .proj-tag{border-color:var(--line);color:var(--ink-soft)}
+  .proj-slot{
+    width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+    border:2px dashed var(--line);border-radius:16px;margin:16px;
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);
+    letter-spacing:.08em;text-transform:uppercase;
+  }
+
+  .skill-block{margin-bottom:22px}
+  .skill-block:last-child{margin-bottom:0}
+  .skill-block h3{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+
+  .courses{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .course{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+  .course span{font-size:14px}
+  .course b{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--lime-deep);white-space:nowrap}
+
+  /* ---------- CONTATO ---------- */
+  .contact{background:var(--ink);border-radius:28px;padding:52px;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+  .contact h2{font-family:'Space Grotesk',sans-serif;font-size:34px;letter-spacing:-.02em;line-height:1.15}
+  .contact p{color:#A0A0B4;margin-top:10px}
+  .links{display:grid;gap:10px}
+  .links a{
+    display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;
+    font-family:'JetBrains Mono',monospace;font-size:14px;
+    border:1px solid #2C2C3C;border-radius:999px;padding:12px 20px;transition:.2s;
+  }
+  .links a:hover{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+  .links a:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+  footer{text-align:center;padding:40px 0 56px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft)}
+
+  @media (max-width:980px){
+    .projects{grid-template-columns:1fr}
+  }
+  @media (max-width:880px){
+    .hero{grid-template-columns:1fr;gap:32px;padding:36px 0 56px}
+    .hero-art{order:-1}
+    .grid-2,.courses{grid-template-columns:1fr}
+    .contact{padding:34px;flex-direction:column;align-items:flex-start}
+    .links{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation:none !important;transition:none !important}
+    .nav-inner a.cta{background:var(--lime);color:var(--ink)}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#topo">Início</a>
+    <a href="#formacao">Formação</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#projetos" class="cta">Projetos</a>
+    <a href="#skills">Skills</a>
+    <a href="#cursos">Cursos</a>
+    <a href="#contato">Contato</a>
+  </div>
+</nav>
+
+<main class="wrap" id="topo">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <div class="eyebrow">São Paulo · Data Full Stack</div>
+      <h1>Hernandes<br>Matias Junior</h1>
+      <p class="lede">Tech Lead e Engenheiro de Dados Sênior no Itaú Unibanco. Construo as trilhas de dados por onde passam milhões de pagamentos por dia — do evento bruto ao modelo que decide.</p>
+      <div class="tags">
+        <span class="tag on">Engenharia de dados</span>
+        <span class="tag on">Ciência de dados</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Estatística</span>
+        <span class="tag">AWS</span>
+        <span class="tag">IA</span>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <img class="photo" src="imagens/hernandes_matias_junior.jpg"
+           alt="Hernandes Matias Junior" width="300" height="300">
+    </div>
+  </header>
+
+  <!-- FORMAÇÃO -->
+  <section id="formacao">
+    <div class="sec-head">
+      <h2>Formação acadêmica</h2>
+      <span>02 pós-graduações · 02 graduações</span>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="edu-tier">Pós-graduação</div>
+        <div class="edu-item">
+          <div><strong>Especialização em Engenharia de Dados</strong><small>PUC Minas</small></div>
+          <div class="yr">2025 — 2026</div>
+        </div>
+        <div class="edu-item">
+          <div><strong>Especialização em Ciência de Dados e Analytics</strong><small>USP</small></div>
+          <div class="yr">2022 — 2023</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="edu-tier">Graduação</div>
+        <div class="edu-item">
+          <div><strong>Bacharelado em Administração de Empresas</strong><small>PUC Minas</small></div>
+          <div class="yr">2018 — 2021</div>
+        </div>
+        <div class="edu-item">
+          <div><strong>Bacharelado em Engenharia Civil</strong><small>Unileste</small></div>
+          <div class="yr">2013 — 2017</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section id="experiencia">
+    <div class="sec-head">
+      <h2>Experiência profissional</h2>
+      <span>2020 — presente</span>
+    </div>
+
+    <div class="jobs">
+
+      <div class="card">
+        <div class="job-head">
+          <div class="job-role">Tech Lead · Engenheiro de Dados Sênior <span class="job-co">— Itaú Unibanco</span></div>
+          <div class="job-period">jun/2022 — presente</div>
+        </div>
+        <div class="job-note">Cargo inicial: Engenheiro de Dados Pleno</div>
+        <ul>
+          <li>Liderança técnica no desenvolvimento de soluções de dados para produtos de pagamentos (Pix, boletos, TED, débito e TEF), com processamento em larga escala e alta criticidade.</li>
+          <li>Estruturação de dados transacionais (milhões de eventos/dia) e atuação end-to-end no ciclo de dados em ambiente cloud AWS.</li>
+          <li>Colaboração com cientistas de dados na preparação de datasets e viabilização de modelos analíticos.</li>
+          <li>Definição de padrões de arquitetura, qualidade e governança de dados.</li>
+          <li>Automação de acesso e exploração de dados com IA (agentes e engenharia de prompts), apoiando análises e tomada de decisão.</li>
+        </ul>
+        <div class="awards">
+          <span class="award">2× prêmio de performance · 2024, 2026</span>
+          <span class="award">1× mérito · 2024</span>
+          <span class="award">1× promoção interna · 2025</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="job-head">
+          <div class="job-role">Cientista de Dados Pleno <span class="job-co">— Localiza</span></div>
+          <div class="job-period">out/2021 — jun/2022</div>
+        </div>
+        <ul>
+          <li>Segmentação de clientes com machine learning não supervisionado e modelagem RFV aplicada à base de CRM.</li>
+          <li>Desenvolvimento de modelos preditivos de propensão e previsão de churn.</li>
+          <li>Preparação de dados para modelagem, incluindo seleção de variáveis e engenharia de features.</li>
+          <li>Análise exploratória e estatística para suporte à definição e avaliação de campanhas de CRM.</li>
+          <li>Elaboração de dashboard em Power BI para acompanhamento de indicadores.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="job-head">
+          <div class="job-role">Engenheiro de Analytics Pleno <span class="job-co">— Construtora Barbosa Mello</span></div>
+          <div class="job-period">out/2020 — out/2021</div>
+        </div>
+        <div class="job-note">Cargo inicial: Engenheiro de Dados Júnior</div>
+        <ul>
+          <li>Soluções de dados para suporte à decisão em controladoria, suprimentos, compliance e gestão de equipamentos.</li>
+          <li>Modelagem e estruturação de dados em data warehouse para definição e acompanhamento de indicadores operacionais e financeiros.</li>
+          <li>Construção de dashboards analíticos no Power BI.</li>
+          <li>Automação de rotinas analíticas e processos de dados com Python.</li>
+          <li>Desenvolvimento de aplicações corporativas com Power Apps e interação direta com áreas de negócio para levantamento e tradução de requisitos.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos">
+    <div class="sec-head">
+      <h2>Projetos</h2>
+      <span>portfólio</span>
+    </div>
+
+    <div class="projects">
+
+      <!-- PROJETO 1 -->
+      <a class="proj v-lime" href="#">
+        <div class="proj-media">
+          <img src="imagens/previsao_de_vendas.png" alt="Projeto de previsão de vendas">
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Previsão de vendas</h3>
+          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Séries temporais</span>
+            <span class="proj-tag">ARIMA</span>
+            <span class="proj-tag">Python</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- PROJETO 2 -->
+      <a class="proj v-dark" href="#">
+        <div class="proj-media">
+          <img src="imagens/risco_de_credito.jpg" alt="Projeto de risco de crédito">
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Risco de crédito</h3>
+          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Scorecard</span>
+            <span class="proj-tag">WOE / IV</span>
+            <span class="proj-tag">Python</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- PROJETO 3 — espaço reservado -->
+      <a class="proj v-light" href="#">
+        <div class="proj-media">
+          <div class="proj-slot">Imagem em breve</div>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Próximo projeto</h3>
+          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Tag</span>
+            <span class="proj-tag">Tag</span>
+            <span class="proj-tag">Tag</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="sec-head">
+      <h2>Skills</h2>
+      <span>ajuste conforme necessário</span>
+    </div>
+    <div class="card">
+      <div class="skill-block">
+        <h3>Engenharia de dados</h3>
+        <div class="tags">
+          <span class="tag on">Python</span><span class="tag on">SQL</span><span class="tag on">AWS</span>
+          <span class="tag on">Data Warehouse</span><span class="tag on">Processamento em larga escala</span>
+          <span class="tag on">Qualidade &amp; governança</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h3>Ciência de dados &amp; analytics</h3>
+        <div class="tags">
+          <span class="tag">Machine learning</span><span class="tag">Modelagem preditiva (churn, propensão)</span>
+          <span class="tag">Segmentação / RFV</span><span class="tag">Estatística aplicada</span><span class="tag">Power BI</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h3>IA &amp; automação</h3>
+        <div class="tags">
+          <span class="tag">Agentes de IA</span><span class="tag">Engenharia de prompts</span><span class="tag">Power Apps</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h3>Idiomas</h3>
+        <div class="tags">
+          <span class="tag">Português — nativo</span><span class="tag">Inglês — (preencher nível)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURSOS -->
+  <section id="cursos">
+    <div class="sec-head">
+      <h2>Cursos extracurriculares</h2>
+      <span>168 horas</span>
+    </div>
+    <div class="courses">
+      <div class="course"><span>Estatística não-paramétrica para tomada de decisão · USP</span><b>35h</b></div>
+      <div class="course"><span>Fundamentos de inteligência artificial para finanças · FIA</span><b>35h</b></div>
+      <div class="course"><span>Análise macroeconômica · USP</span><b>30h</b></div>
+      <div class="course"><span>Econometria básica aplicada · USP</span><b>30h</b></div>
+      <div class="course"><span>Iniciação e planejamento de projetos · USP</span><b>30h</b></div>
+      <div class="course"><span>Data science para finanças · USP</span><b>8h</b></div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="contact">
+      <div>
+        <h2>Vamos conversar<br>sobre dados.</h2>
+        <p>Aberto a trocas sobre engenharia de dados, pagamentos e IA aplicada.</p>
+      </div>
+      <div class="links">
+        <a href="mailto:hernandesmjunior@gmail.com">hernandesmjunior@gmail.com</a>
+        <a href="tel:+5531993014381">(31) 99301-4381</a>
+        <a href="https://linkedin.com/in/hernandesmjunior" target="_blank" rel="noopener">linkedin.com/in/hernandesmjunior</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>Hernandes Matias Junior · Currículo · 2026</footer>
+</main>
+
+<script>
+  const links = [...document.querySelectorAll('.nav-inner a')];
+  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+  const setActive = () => {
+    const y = window.scrollY + 140;
+    let current = sections[0];
+    sections.forEach(s => { if (s && s.offsetTop <= y) current = s; });
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
+  };
+  window.addEventListener('scroll', setActive, {passive:true});
+  setActive();
+</script>
+</body>
+</html>
