@@ -44,7 +44,7 @@
     border:1px solid var(--line);
     border-radius:999px;padding:6px;
     box-shadow:var(--shadow);
-    max-width:100%;overflow-x:auto;scrollbar-width:none;
+    max-width:100%;min-width:0;overflow-x:auto;scrollbar-width:none;
   }
   .nav-inner::-webkit-scrollbar{display:none}
   .nav-inner a{
@@ -214,6 +214,17 @@
     .grid-2,.courses{grid-template-columns:1fr}
     .contact{padding:34px;flex-direction:column;align-items:flex-start}
     .links{width:100%}
+    .nav{padding:10px 12px}
+    .nav-inner{
+      flex-wrap:wrap;
+      justify-content:center;
+      overflow-x:visible;
+      border-radius:20px;
+      gap:4px;
+      padding:8px;
+      width:100%;
+    }
+    .nav-inner a{font-size:8px;padding:7px 9px}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
