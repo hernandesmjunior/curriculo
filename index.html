@@ -130,6 +130,8 @@
 
   /* ---------- EXPERIÊNCIA (cards alinhados, sem timeline) ---------- */
   .jobs{display:grid;gap:18px}
+  .jobs-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:880px){.jobs-2{grid-template-columns:1fr}}
   .job-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
   .job-role{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;letter-spacing:-.01em}
   .job-co{color:var(--lime-deep);font-weight:600}
@@ -167,7 +169,7 @@
   /* variante 2 — preto */
   .proj.v-dark{background:#000000;color:#ffffff}
   .proj.v-dark .proj-media{background:#000000}
-  .proj.v-dark .proj-desc{color:#fffffff}
+  .proj.v-dark .proj-desc{color:#ffffff}
   .proj.v-dark .proj-tag{border-color:#ffffff;color:#ffffff}
 
   /* variante 3 — branco / vaga futura */
@@ -357,7 +359,8 @@
             <p><b>Principais entregas:</b></p>
           <li>Pipeline que mede o impacto do cadastro no DDA sobre o engajamento do cliente, comparando janelas de 3 meses antes e depois. Consumido por Cientistas de Dados e Engenheiros de Analytics;</li>
           <li>Tabela SPEC que identifica clientes com propensão ao uso do Hub de Pagamentos, integrando 12 origens de dados (transacionais e de navegação). Produto consumido pelo negócio para direcionar ações de engajamento;</li>
-          <li>Pipeline que consolida boletos emitidos para clientes Itaú Unibanco e mede onde são pagos (no banco ou na concorrência) mapeando a perda de participação nas transações.</li>
+          <li>Pipeline que consolida boletos emitidos para clientes Itaú Unibanco e mede onde são pagos (no banco ou na concorrência) mapeando a perda de participação nas transações;</li>
+          <li>Criação de agentes de IA, orquestrador e especialistas, para auxiliar os clientes internos a encontrarem os melhores produtos de dados(tabelas, paineis, modelos, eventos e APIs) da comunidade de Daily Banking.</li>
         </ul>
         <div class="awards">
           <span class="award">2× prêmio de performance · 2024, 2026</span>
@@ -374,11 +377,10 @@
         <ul>
             Atuação na área de CRM da empresa, atendendo principalmente o segmento cliente pessoa física.
             <p><b>Principais entregas:</b></p>
-          <li>Segmentação de clientes com machine learning não supervisionado e modelagem RFV aplicada à base de CRM.</li>
-          <li>Desenvolvimento de modelos preditivos de propensão e previsão de churn.</li>
-          <li>Preparação de dados para modelagem, incluindo seleção de variáveis e engenharia de features.</li>
-          <li>Análise exploratória e estatística para suporte à definição e avaliação de campanhas de CRM.</li>
-          <li>Elaboração de dashboard em Power BI para acompanhamento de indicadores.</li>
+          <li>Segmentação de clientes para a campanha de engajamento do produto de carro por assinatura;</li>
+          <li>Análise exploratória dos clientes residentes do Brasil que alugam carros no exterior e vice-versa, para que a Localiza avaliasse ir em busca de um novo parceiro após a rescisão de contrato com a Hertz;</li>
+          <li>Criação do score dos clientes PJ para identificar quais as empresas mais valiosas que os vendedores da Localiza deveriam priorizar em suas carteiras;</li>
+          <li>Desenvolvimento de modelo preditivo para identificar os clientes com maior propensão à compra de veículos da Localiza Seminovos.</li>
         </ul>
       </div>
 
@@ -387,18 +389,45 @@
           <div class="job-role">Engenheiro de Analytics Pleno <span class="job-co">— Construtora Barbosa Mello</span></div>
           <div class="job-period">out/2020 — out/2021</div>
         </div>
-        <div class="job-note">Cargo inicial: Engenheiro de Analytics Júnior</div>
+        <div class="job-note">Cargo inicial: Engenheiro de Analytics Junior</div>
         <ul>
-          <li>Soluções de dados para suporte à decisão em controladoria, suprimentos, compliance e gestão de equipamentos.</li>
-          <li>Modelagem e estruturação de dados em data warehouse para definição e acompanhamento de indicadores operacionais e financeiros.</li>
-          <li>Construção de dashboards analíticos no Power BI.</li>
-          <li>Automação de rotinas analíticas e processos de dados com Python.</li>
-          <li>Desenvolvimento de aplicações corporativas com Power Apps e interação direta com áreas de negócio para levantamento e tradução de requisitos.</li>
+            Atuação no Núcleo Data Analytics, primeira área de dados da empresa.
+            <p><b>Principais entregas:</b></p>
+          <li>Monitoramento de oportunidades de negócio para a empresa com base em notícias publicadas por sites e blogs, em um trabalho que envolveu web scraping com Python, Sharepoint, PowerApps, PowerAutomate e PowerBI;</li>
+          <li>Desenvolvimento de aplicativo no PowerApps para as inspeções realizadas pela Central de Equipamentos, a fim de tornar o processo mais ágil e eliminar o uso do papel. O aplicativo possui leitor de QRCode e a possibilidade de incluir imagens, e todos os dados são exibidos, assim como suas métricas, em um painel do PowerBI;</li>
+          <li>Painel de PowerBI completo para o acompanhamento da necessidade de mão de obra e dos processos seletivos para suprir essas necessidades. O produto digital é utilizado simultaneamente por todas as obras da organização e consta, além das métricas gerais de R&S, o SLA de cada etapa, turnover e índice de sucesso da contratação.</li>
         </ul>
         <div class="awards">
           <span class="award">1× promoção interna em menos de um ano de empresa · 2021</span>
         </div>
       </div>
+
+
+      <div class="jobs-2">
+
+        <div class="card">
+          <div class="job-head">
+            <div class="job-role">Analista de BI Junior<span class="job-co"> — VLI</span></div>
+            <div class="job-period">jun/2020 — out/2020</div>
+          </div>
+          <ul>
+            <li>Desenvolvimento de paineis no Power BI e de aplicativos no PowerApps para as áreas de Controladoria e Compliance da empresa que é o braço logístico da Vale.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="job-head">
+            <div class="job-role">Estagiário de BI<span class="job-co"> — Lasses</span></div>
+            <div class="job-period">dez/2019 — jun/2020</div>
+          </div>
+          <ul>
+            <li>Desenvolvimento de paineis no Power BI e apoio aos consultores em soluções para clientes do varejo, como O Boticário, Cacau Show e Petz.</li>
+          </ul>
+        </div>
+
+      </div>
+
+
 
     </div>
   </section>
@@ -416,13 +445,13 @@
     <div class="projects">
 
       <!-- PROJETO 1 -->
-      <a class="proj v-lime" href="#">
+      <a class="proj v-lime" href="https://github.com/hernandesmjunior/previsao-vendas/blob/main/Modelo%20de%20Previs%C3%A3o%20de%20Vendas.ipynb" target="_blank" rel="noopener">
         <div class="proj-media">
           <img src="imagens/previsao_de_vendas.png" alt="Projeto de previsão de vendas">
         </div>
         <div class="proj-body">
           <h3 class="proj-title">Previsão de vendas</h3>
-          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
+          <p class="proj-desc">São utilizados desde técnicas de alisamento exponencial até modelos de séries temporais mais sofisticados.</p>
           <div class="proj-tags">
             <span class="proj-tag">Séries temporais</span>
             <span class="proj-tag">ARIMA</span>
@@ -431,13 +460,13 @@
       </a>
 
       <!-- PROJETO 2 -->
-    <a class="proj v-laranja" href="#">
+    <a class="proj v-laranja" href="https://github.com/hernandesmjunior/modelagem-risco-credito/blob/main/Modelo%20de%20Risco%20de%20Cr%C3%A9dito%20-%20German%20Credit.ipynb" target="_blank" rel="noopener">
         <div class="proj-media">
           <img src="imagens/risco_de_credito.png" alt="Projeto de risco de crédito">
         </div>
         <div class="proj-body">
           <h3 class="proj-title">Risco de crédito</h3>
-          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
+          <p class="proj-desc">Modelo que identifica quais clientes possuem probabilidade de "dar default".</p>
           <div class="proj-tags">
             <span class="proj-tag">Machine Learning</span>
             <span class="proj-tag">Scorecard</span>
@@ -448,13 +477,13 @@
 
       <!-- PROJETO 3 — espaço reservado -->
 
-      <a class="proj v-dark" href="#">
+      <a class="proj v-dark" href="https://github.com/hernandesmjunior/segmentacao-clientes/blob/main/Segmenta%C3%A7%C3%A3o%20de%20Clientes.ipynb"  target="_blank" rel="noopener">
         <div class="proj-media">
           <img src="imagens/clusterizacao_de_clientes.png" alt="Segmentação de clientes">
         </div>
         <div class="proj-body">
           <h3 class="proj-title">Segmentação de clientes</h3>
-          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
+          <p class="proj-desc">Encontrando perfis de consumo em uma base de clientes de um shopping.</p>
           <div class="proj-tags">
             <span class="proj-tag">Machine Learning</span>
             <span class="proj-tag">KMeans</span>
@@ -471,11 +500,8 @@
         </div>
         <div class="proj-body">
           <h3 class="proj-title">[Em breve] Análise de sobrevivência</h3>
-          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
+          <p class="proj-desc"></p>
           <div class="proj-tags">
-            <span class="proj-tag">Tag</span>
-            <span class="proj-tag">Tag</span>
-            <span class="proj-tag">Tag</span>
           </div>
         </div>
       </a>
@@ -487,11 +513,8 @@
         </div>
         <div class="proj-body">
           <h3 class="proj-title">[Em breve] Ingestão e modelagem de dados</h3>
-          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
+          <p class="proj-desc"></p>
           <div class="proj-tags">
-            <span class="proj-tag">Tag</span>
-            <span class="proj-tag">Tag</span>
-            <span class="proj-tag">Tag</span>
           </div>
         </div>
       </a>
@@ -503,11 +526,8 @@
         </div>
         <div class="proj-body">
           <h3 class="proj-title">[Em breve] Agente de consulta a dados</h3>
-          <p class="proj-desc">Descrição do projeto — substitua por dois períodos curtos explicando o problema e o resultado.</p>
+          <p class="proj-desc"></p>
           <div class="proj-tags">
-            <span class="proj-tag">Tag</span>
-            <span class="proj-tag">Tag</span>
-            <span class="proj-tag">Tag</span>
           </div>
         </div>
       </a>
@@ -526,7 +546,7 @@
         <h3>Engenharia de dados</h3>
         <div class="tags">
           <span class="tag">AWS</span><span class="tag">Glue</span><span class="tag">Lambda</span><span class="tag">Athena</span>
-          <span class="tag">Stepfunction</span><span class="tag">S3</span><span class="tag">Banco de Dados</span><span class="tag">Terraform</span>
+          <span class="tag">Stepfunction</span><span class="tag">S3</span><span class="tag">Banco de Dados</span><span class="tag">Terraform</span><span class="tag">Git</span>
         </div>
       </div>
       <div class="skill-block">
@@ -589,10 +609,6 @@
       </div>
     </div>
   </section>
-  <br>
-<br>
-<br>
-<br>
 
   <footer>Hernandes Matias Junior · Currículo · 2026</footer>
 </main>
@@ -604,6 +620,9 @@
     const y = window.scrollY + 140;
     let current = sections[0];
     sections.forEach(s => { if (s && s.offsetTop <= y) current = s; });
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+      current = sections[sections.length - 1];
+    }
     links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
   };
   window.addEventListener('scroll', setActive, {passive:true});
